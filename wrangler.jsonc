@@ -19,6 +19,11 @@
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
 	},
+	"vars": {
+		"NEXT_PUBLIC_SITE_NAME": "Reboot Journal",
+		"NEXT_PUBLIC_GOOGLE_ANALYTICS_ID": "G-KPFQ4179E7",
+		"NEXT_PUBLIC_BANNER_IMAGE": "https://bucket.rebootjournal.com/reboot-hero.webp"
+	},
 	"images": {
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
@@ -34,7 +39,20 @@
 	],
 	"observability": {
 		"enabled": true
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "rebootjournal-db",
+			"database_id": "686544bf-543e-482f-a3b2-77bccc291f4f"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "rebootjournal-assets"
+		}
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
