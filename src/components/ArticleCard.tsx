@@ -6,6 +6,8 @@ import ReactMarkdown from 'react-markdown';
 import { Post } from '@/lib/fetchPost';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
+import { Button } from './ui/button';
+import { ArrowRight } from 'lucide-react';
 
 interface ArticleCardProps {
   post: Post;
@@ -57,7 +59,7 @@ export default function ArticleCard({ post }: ArticleCardProps) {
             <ReactMarkdown>{post.excerpt}</ReactMarkdown>
           </div>
         </CardContent>
-        <CardFooter className="px-4 pt-2 pb-4">
+        <CardFooter className="px-4 pt-2 pb-4 flex justify-between items-center">
           <span className="text-xs font-medium text-muted-foreground">
             {new Date(post.scheduled_at || post.created_at).toLocaleDateString('en-US', {
               month: 'long',
@@ -65,6 +67,9 @@ export default function ArticleCard({ post }: ArticleCardProps) {
               year: 'numeric'
             })}
           </span>
+          <Button variant="ghost" size="sm" className="group-hover:translate-x-1 transition-transform p-0 hover:bg-transparent hover:text-primary cursor-pointer">
+            Read Article <ArrowRight className="ml-1 h-4 w-4" />
+          </Button>
         </CardFooter>
       </Card>
     </Link>
