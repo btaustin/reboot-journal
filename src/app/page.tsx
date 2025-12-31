@@ -10,7 +10,6 @@ export default async function Home() {
 	const posts = postsResult?.results || [];
 
 	const featuredPosts = posts.filter(post => post.is_featured);
-	const regularPosts = posts.filter(post => !post.is_featured);
 
 	return (
 		<div className="min-h-screen bg-background">
@@ -31,15 +30,15 @@ export default async function Home() {
 							</p>
 						</div>
 
-						{regularPosts.length === 0 && featuredPosts.length === 0 && (
+						{posts.length === 0 && featuredPosts.length === 0 && (
 							<div className="text-center py-24 border rounded-2xl bg-muted/30">
 								<p className="text-muted-foreground">No articles found. Check back soon!</p>
 							</div>
 						)}
 
-						{regularPosts.length > 0 && (
+						{posts.length > 0 && (
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-								{regularPosts.map((post) => (
+								{posts.map((post) => (
 									<ArticleCard key={post.slug} post={post} />
 								))}
 							</div>
