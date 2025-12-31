@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import ArticleCard from "@/components/ArticleCard";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
 	const postsResult = await fetchPosts();
 	const posts = postsResult?.results || [];

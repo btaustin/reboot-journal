@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import Header from "@/components/Header";
 import { Calendar, Clock, Tag } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 type ArticlePageProps = {
   params: Promise<{ slug: string }>
 }
