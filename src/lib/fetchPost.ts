@@ -23,7 +23,6 @@ export type Post = {
 export default async function fetchPost(slug: string): Promise<Post | null> {
   const { env } = await getCloudflareContext({ async: true });
   const db = env.DB;
-
   const stmt = db
     .prepare("SELECT p.*, GROUP_CONCAT(pc.category_slug) AS categories FROM Post p, PostCategory pc WHERE p.slug = pc.post_slug AND p.slug = ? GROUP BY p.slug")
     .bind(slug);
