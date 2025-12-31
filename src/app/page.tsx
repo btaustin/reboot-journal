@@ -21,7 +21,7 @@ export default async function Home() {
 					</section>
 				)}
 
-				<div className="container py-12 md:py-24">
+				<div className="container py-12">
 					<div className="flex flex-col gap-12">
 						<div className="flex flex-col gap-4">
 							<h2 className="text-3xl font-bold tracking-tight">Latest Articles</h2>

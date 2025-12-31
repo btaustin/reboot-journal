@@ -38,7 +38,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <div className="relative w-full h-[280px] md:h-[400px] lg:h-[50vh] lg:min-h-[400px] overflow-hidden bg-muted">
+        <div className="relative w-full h-[280px] md:h-[450px] lg:h-[600px] xl:h-[80vh] overflow-hidden bg-muted">
           <div className="absolute inset-0">
             {isVideo ? (
               <video
@@ -72,6 +72,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%),_0_1px_3px_rgb(0_0_0_/_90%)]">
                   {post.title}
                 </h1>
+                {post.subhead && (
+                  <div className="text-lg bg-black/50 bg-blur rounded-md p-4">{post.subhead}</div>
+                )}
 
                 <div className="flex flex-wrap items-center gap-6 pt-4 text-sm font-medium text-gray-200 [text-shadow:_0_1px_5px_rgb(0_0_0_/_80%)]">
                   <div className="flex items-center gap-2">
@@ -94,7 +97,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </div>
 
         {/* Content Section */}
-        <div className="container mx-auto py-12 md:py-20">
+        <div className="container mx-auto py-4 md:py-8">
           <div className="max-w-4xl mx-auto">
             <AuthorHeader />
 

@@ -34,7 +34,7 @@ export default function FeaturedCarousel({ posts }: FeaturedCarouselProps) {
   const isVideo = currentPost.image_feature_url?.endsWith('.mov') || currentPost.image_feature_url?.endsWith('.mp4');
 
   return (
-    <div className="relative w-full h-[280px] md:h-[450px] lg:h-[600px] overflow-hidden bg-muted">
+    <div className="relative w-full h-[280px] md:h-[450px] lg:h-[600px] xl:h-[80vh] overflow-hidden bg-muted">
       <div className="absolute inset-0 transition-opacity duration-1000">
         {isVideo ? (
           <video
@@ -67,6 +67,9 @@ export default function FeaturedCarousel({ posts }: FeaturedCarouselProps) {
           <h1 className="text-4xl md:text-6xl font-bold leading-tight [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%),_0_1px_3px_rgb(0_0_0_/_90%)]">
             {currentPost.title}
           </h1>
+          {currentPost.subhead && (
+            <div className="text-lg bg-black/50 bg-blur rounded-md p-4">{currentPost.subhead}</div>
+          )}
           <div className="pt-4">
             <Button asChild size="lg" className="shadow-xl hover:shadow-2xl transition-shadow">
               <Link href={`/articles/${currentPost.slug}`}>Read Article</Link>
