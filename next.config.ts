@@ -2,7 +2,16 @@ import type { NextConfig } from "next";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig: NextConfig = {
-	/* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'bucket.rebootjournal.com',
+        port: '',
+        pathname: '/**',
+      },
+    ]
+  },
 };
 
 export default nextConfig;
