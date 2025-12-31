@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
-import ReactMarkdown from 'react-markdown';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Post } from '@/lib/fetchPost';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
@@ -14,19 +14,19 @@ interface FeaturedCarouselProps {
 export default function FeaturedCarousel({ posts }: FeaturedCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % posts.length);
-  };
+  }, [posts.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + posts.length) % posts.length);
-  };
+  }, [posts.length]);
 
   useEffect(() => {
     if (posts.length <= 1) return;
     const interval = setInterval(nextSlide, 8000);
     return () => clearInterval(interval);
-  }, [posts.length, currentIndex]);
+  }, [posts.length, nextSlide]);
 
   if (posts.length === 0) return null;
 

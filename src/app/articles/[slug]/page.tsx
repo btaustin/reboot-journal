@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import fetchPost from "@/lib/fetchPost";
 import ReactMarkdown from 'react-markdown';
 import Header from "@/components/Header";
@@ -18,7 +19,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Post not found</h1>
-            <p className="text-muted-foreground">The article you're looking for doesn't exist.</p>
+            <p className="text-muted-foreground">The article you&apos;re looking for doesn&apos;t exist.</p>
           </div>
         </main>
       </div>
