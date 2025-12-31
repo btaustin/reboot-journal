@@ -3,6 +3,8 @@ import fetchPost from "@/lib/fetchPost";
 import ReactMarkdown from 'react-markdown';
 import Header from "@/components/Header";
 import { Calendar, Clock, Tag } from "lucide-react";
+import AuthorFooter from "@/components/AuthorFooter";
+import AuthorHeader from "@/components/AuthorHeader";
 
 export const dynamic = 'force-dynamic';
 
@@ -94,10 +96,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         {/* Content Section */}
         <div className="container mx-auto py-12 md:py-20">
           <div className="max-w-4xl mx-auto">
+            <AuthorHeader />
+
             {/* Article Body */}
             <article className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-primary hover:prose-a:opacity-80 transition-all">
               <ReactMarkdown>{post.content || ''}</ReactMarkdown>
             </article>
+
+            <AuthorFooter />
 
             {/* Footer / Tags (if any) */}
             <div className="mt-16 pt-8 border-t flex items-center gap-4 text-muted-foreground">
