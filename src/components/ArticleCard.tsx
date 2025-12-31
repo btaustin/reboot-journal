@@ -53,6 +53,7 @@ export default function ArticleCard({ post }: ArticleCardProps) {
           <h3 className="text-xl font-bold leading-tight group-hover:text-primary transition-colors duration-300">
             {post.title}
           </h3>
+          {post.subhead && <div className="text-sm font-semibold">{post.subhead}</div>}
         </CardHeader>
         <CardContent className="px-4 py-2">
           <div className="text-sm text-muted-foreground line-clamp-8 [&>p]:mb-0 [&>p]:inline">
