@@ -34,7 +34,7 @@ export default function FeaturedCarousel({ posts }: FeaturedCarouselProps) {
   const isVideo = currentPost.image_feature_url?.endsWith('.mov') || currentPost.image_feature_url?.endsWith('.mp4');
 
   return (
-    <div className="relative w-full h-[600px] overflow-hidden bg-muted">
+    <div className="relative w-full h-[280px] md:h-[450px] lg:h-[600px] overflow-hidden bg-muted">
       <div className="absolute inset-0 transition-opacity duration-1000">
         {isVideo ? (
           <video

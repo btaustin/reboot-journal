@@ -36,7 +36,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <div className="relative w-full h-[50vh] min-h-[400px] overflow-hidden bg-muted">
+        <div className="relative w-full h-[280px] md:h-[400px] lg:h-[50vh] lg:min-h-[400px] overflow-hidden bg-muted">
           <div className="absolute inset-0">
             {isVideo ? (
               <video
