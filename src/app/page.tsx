@@ -48,16 +48,9 @@ export default async function Home() {
 			</main>
 
 			<footer className="border-t py-12 bg-muted/30">
-				<div className="container flex flex-col md:flex-row justify-between items-center gap-6">
-					<p className="text-sm text-muted-foreground">
-						© {new Date().getFullYear()} Reboot Journal. All rights reserved.
-					</p>
-					<div className="flex gap-6 text-sm font-medium text-muted-foreground">
-						<a href="#" className="hover:text-primary transition-colors">Twitter</a>
-						<a href="#" className="hover:text-primary transition-colors">GitHub</a>
-						<a href="#" className="hover:text-primary transition-colors">RSS</a>
-					</div>
-				</div>
+				<p className="text-sm text-muted-foreground text-center">
+					© {new Date().getFullYear()} Reboot Journal. All rights reserved.
+				</p>
 			</footer>
 		</div>
 	)
