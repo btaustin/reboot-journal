@@ -73,7 +73,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   {post.title}
                 </h1>
                 {post.subhead && (
-                  <div className="text-lg bg-black/50 bg-blur rounded-md p-4">{post.subhead}</div>
+                  <div className="text-lg bg-black/50 bg-blur hidden md:block rounded-md p-4">{post.subhead}</div>
                 )}
 
                 <div className="flex flex-wrap items-center gap-6 pt-4 text-sm font-medium text-gray-200 [text-shadow:_0_1px_5px_rgb(0_0_0_/_80%)]">

@@ -68,7 +68,7 @@ export default function FeaturedCarousel({ posts }: FeaturedCarouselProps) {
             {currentPost.title}
           </h1>
           {currentPost.subhead && (
-            <div className="text-lg bg-black/50 bg-blur rounded-md p-4">{currentPost.subhead}</div>
+            <div className="text-lg bg-black/50 bg-blur hidden md:block rounded-md p-4">{currentPost.subhead}</div>
           )}
           <div className="pt-4">
             <Button asChild size="lg" className="shadow-xl hover:shadow-2xl transition-shadow">
